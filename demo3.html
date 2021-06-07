@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>demo3: source code</title>
+	<link rel="stylesheet" href="sneakers.css" />
+	<script src="sneakers.js"></script>
+	<style>
+		body
+		{
+			background: #d5d4d2;
+			color: black;
+			margin: 1rem auto auto auto;
+			font-size: 17px;
+		}
+
+		:root
+		{
+			--sneakers-bg: rgb(20,20,20);
+			--sneakers-decrypted: white;
+			--sneakers-rotating: rgba(255,255,255,0.6);
+			
+			--sneakers-bg2: #363636; /* the background gradient */
+		}
+
+		#sneakers
+		{
+			margin: 1em auto 1em auto;
+			max-width: 50rem;
+			border: 0.5em solid gray;
+			font-family: consolas,monospace;
+			padding: 3ch 2ch 3ch 2ch;
+			
+			background: linear-gradient(0deg, var(--sneakers-bg2) 0%, var(--sneakers-bg) 100%);
+			background-attachment: fixed;
+		}
+
+		#sneakers::selection, #sneakers *::selection
+		{
+			background: var(--sneakers-rotating);
+			color: var(--sneakers-bg);
+		}
+
+		/* group it somehow */
+		ul#sneakers li
+		{
+			text-indent: -1ch;
+			margin-left: 1ch;
+		}
+		ul#sneakers li .word
+		{
+			text-indent: 0;
+		}
+	</style>
+	<script>
+		window.onload = function()
+		{
+			sneakers.rotate_spaces = true;
+			sneakers.preformatted = false;
+			sneakers.d_slower = 0;
+			sneakers.delay = 30;
+			sneakers.d_rate = 90;
+			sneakers.rotating_time = 2000;
+			sneakers.trigger_after = 1500;
+			sneakers.start();
+		}
+	</script>
+</head>
+
+<body>
+
+<ul id="sneakers">
+	<li>// csgo controls</li>
+	<li>unbindall</li>
+	<li>bind "TAB" "+showscores"</li>
+	<li>bind "ENTER" "+use"</li>
+	<li>bind "ESCAPE" "cancelselect"</li>
+	<li>bind "+" "sizeup"</li>
+	<li>bind "-" "sizedown"</li>
+	<li>bind "," "primammo" //bind "," "buyammo1"</li>
+	<li>bind "." "buyammo2"</li>
+	<li>bind "0" "slot10"</li>
+	<li>bind "1" "slot1"</li>
+	<li>bind "2" "slot2"</li>
+	<li>bind "3" "slot3"</li>
+	<li>bind "4" "slot4"</li>
+	<li>bind "5" "slot5"</li>
+	<li>bind "6" "slot6"</li>
+	<li>bind "7" "slot7"</li>
+	<li>bind "8" "slot8"</li>
+	<li>bind "9" "slot9"</li>
+	<li>bind "b" "buy"</li>
+	<li>bind "d" "drop"</li>
+	<li>bind "e" "radio3"</li>
+	<li>bind "f" "impulse 100"</li>
+	<li>bind "g" "+commandmenu"</li>
+	<li>bind "n" "nightvision"</li>
+	<li>bind "q" "radio1"</li>
+	<li>bind "w" "radio2"</li>
+	<li>bind "`" "toggleconsole"</li>
+	<li>bind "~" "toggleconsole"</li>
+	<li>bind "uparrow" "+forward"</li>
+	<li>bind "downarrow" "+back"</li>
+	<li>bind "leftarrow" "+moveleft"</li>
+	<li>bind "rightarrow" "+moveright"</li>
+	<li>bind "ctrl" "+jump"</li>
+	<li>bind "shift" "+duck"</li>
+	<li>bind "f9" "screenshot"</li>
+	<li>bind "del" "invprev"</li>
+	<li>bind "end" "invnext"</li>
+	<li>bind "kp_ins" "+reload"</li>
+	<li>bind "mouse1" "+attack"</li>
+	<li>bind "mouse2" "+attack2"</li>
+	<li>bind "pause" "pause"</li>
+	<li>bind "mwheelup" ""</li>
+	<li>bind "mwheeldown" ""</li>
+	<li>bind "t" "chooseteam"</li>
+	<li>bind "f12" "quit"</li>
+	<li>m_filter "1.000000"</li>
+	<li>+mlook</li>
+	<li>//sensitivity 7.2</li>
+</ul>
+
+</body>
+</html>
+

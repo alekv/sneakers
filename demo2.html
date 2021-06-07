@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>demo2</title>
+	<link rel="stylesheet" href="sneakers.css" />
+	<script src="sneakers.js"></script>
+	<style>
+		body
+		{
+			background: #d5d4d2;
+			color: black;
+			margin: 1rem auto auto auto;
+			font-size: 17px;
+		}
+
+		:root
+		{
+			--sneakers-bg: rgb(20,20,20);
+			--sneakers-decrypted: white;
+			--sneakers-rotating: rgba(255,255,255,0.6);
+			
+			--sneakers-bg2: #363636; /* the background gradient */
+		}
+
+		#sneakers
+		{
+			margin: 1em auto 1em auto;
+			max-width: 50rem;
+			border: 0.5em solid gray;
+			font-family: consolas,monospace;
+			padding: 3ch 2ch 3ch 2ch;
+			
+			background: linear-gradient(0deg, var(--sneakers-bg2) 0%, var(--sneakers-bg) 100%);
+			background-attachment: fixed;
+		}
+
+		#sneakers::selection, #sneakers *::selection
+		{
+			background: var(--sneakers-rotating);
+			color: var(--sneakers-bg);
+		}
+
+		/* group it somehow */
+		ul#sneakers li
+		{
+			text-indent: -1ch;
+			margin-left: 1ch;
+		}
+		ul#sneakers li .word
+		{
+			text-indent: 0;
+		}
+	</style>
+	<script>
+		window.onload = function()
+		{
+			sneakers.preformatted = true;
+			sneakers.delay = 30;
+			sneakers.d_rate = 50;
+			sneakers.rotating_time = 800;
+			sneakers.trigger_after = 200;
+			sneakers.start();
+		}
+	</script>
+</head>
+
+<body>
+
+<pre id="sneakers">
+      Composite CGA patch for COMMANDER KEEN V: THE ARMAGEDDON MACHINE
+      ----------------------------------------------------------------
+
+      1. WHAT'S THIS?                                        by VileR
+      2. USAGE                                             2016-07-15
+      3. SYSTEM REQUIREMENTS
+      4. TECHNICAL PATCH INFO
+      5. CREDITS & ACKNOWLEDGEMENTS
+      6. CONTACT
+      7. LEGAL STUFF
+
+
+
+---------------
+1. WHAT'S THIS?
+===============
+
+   A different type of Keen 'mod' - this one doesn't provide new maps,
+   enemies, game logic or anything like that.  What this does is patch your
+   copy of Commander Keen 5 (v1.4 CGA, Apogee release!) to take optimal
+   advantage of composite displays.
+
+   Basically, it exploits CGA's lesser-known capability of displaying solid
+   artifact colors on NTSC-compatible composite monitors or TVs.  The
+   technique is described in detail elsewhere, but in "normal" graphics
+   modes, it expands the card's palette from 2/4 colors to 16.  These are
+   not the same 16 RGBI colors normally supported by CGA/EGA, so all game
+   graphics have been redrawn specifically for this mode.
+
+
+
+--------
+2. USAGE
+========
+
+   To install:
+
+   - Copy all KEEN5 v1.4-CGA game files into a new directory (recommended).
+   - Place the contents of the patch in the same directory:
+         C16GRAPH.CK5
+         C16HEAD.CK5
+         CK5PATCH.EXE
+         KEEN5C16.BAT
+         KEEN5C16.PAT
+
+   To run, simply launch KEEN5C16.BAT.
+</pre>
+
+</body>
+</html>
+

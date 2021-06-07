@@ -1,0 +1,44 @@
+/*
+You need to set on :root variables with the colors. '--sneakers-bg' is the background, '--sneakers-rotating' is the color of the text while it rotates, and '--sneakers-decrypted' is the color of the text once it has been decrypted. demo.css has the colors set for an effect close to the film.
+
+Most of the things in this stylesheet concern wrapping. Browsers will wrap text on a lot of the special symbols, like `/` and `-` which will mess up the visuals of the animation. To counter that I'm inserting some additional markup (.word) and make the text wrap only on spaces.
+*/
+
+#sneakers
+{
+	font-family: monospace;
+	background: var(--sneakers-bg);
+	color: var(--sneakers-rotating);
+	
+	/* Ensures that long strings without spaces will wrap. Doesn't conflict with my other choices in this stylesheet. */
+	-overflow-wrap: break-word;
+}
+
+pre#sneakers
+{
+	white-space: pre-wrap;
+	overflow-wrap: break-word; /* do I need this? */
+	color: var(--sneakers-rotating);
+}
+
+ul#sneakers
+{
+	list-style-type: none;
+}
+
+#sneakers .word
+{
+	white-space: nowrap;
+	
+	/* If I don't do this then when preformated==false and rotate_spaces==true the wrapping will break. Tip from: https://stackoverflow.com/q/5392853 */
+	display: inline-block;
+
+	/* Without this I wouldn't be able to rotate spaces in non-preformated mode. */
+	overflow-wrap: break-word;
+}
+
+#sneakers .decrypted
+{
+	color: var(--sneakers-decrypted);
+}
+

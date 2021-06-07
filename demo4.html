@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>demo4: continual rotations</title>
+	<link rel="stylesheet" href="sneakers.css" />
+	<script src="sneakers.js"></script>
+	<style>
+		body
+		{
+			background: #d5d4d2;
+			color: black;
+			margin: 1rem auto auto auto;
+			font-size: 17px;
+		}
+
+		:root
+		{
+			--sneakers-bg: black;           /* the background */
+			--sneakers-rotating: #697573;   /* color of the text while it rotates */
+			--sneakers-decrypted: #3289f0;  /* color of the text once it gets decrypted */
+			
+			--sneakers-bg2: #363636;        /* background gradient */
+			
+			--sneakers-bg: rgb(20,20,20);
+			--sneakers-decrypted: white;
+			--sneakers-rotating: rgba(255,255,255,0.6);
+		}
+
+		#sneakers
+		{
+			margin: 1em auto 1em auto;
+			border: 0.5em solid gray;
+			font-family: consolas,monospace;
+			padding: 3ch 2ch 3ch 2ch;
+			
+			max-width: 90ch;
+			
+			background: linear-gradient(0deg, var(--sneakers-bg2) 0%, var(--sneakers-bg) 100%);
+			background-attachment: fixed;
+		}
+
+		#sneakers .word
+		{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: start;
+			-justify-content: space-evenly;		
+		}
+
+		#sneakers .word span
+		{
+			padding: 0.2ch;
+			display: block;
+		}
+
+		#sneakers::selection, #sneakers *::selection
+		{
+			background: var(--sneakers-rotating);
+			color: var(--sneakers-bg);
+		}
+	</style>
+	<script>
+		window.onload = function()
+		{
+			// Fill it with zeroes so we can do the animation. The number 2304 agrees with the 90ch width I set on #sneakers.
+			var content = "";
+			for (var i=0; i<2304; i++) content = content + "0";
+			document.getElementById("sneakers").innerHTML = content;
+
+			sneakers.chars = "0123456789".split("");
+			sneakers.rotate_spaces = true;
+			sneakers.preformated = false;
+			sneakers.d_slower = 0;
+			sneakers.delay = 33;
+			sneakers.r_slower = 0.5;
+			sneakers.rotating_time = false;
+			sneakers.start();
+		}
+	</script>
+</head>
+
+<body>
+
+<div id="sneakers"></div>
+
+</body>
+</html>
+
