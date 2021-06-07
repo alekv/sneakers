@@ -1,6 +1,6 @@
 # Sneakers
 
-A tiny JavaScript library to recreate the decryption animation from the 1992 tech thriller [Sneakers](https://en.wikipedia.org/wiki/Sneakers_(1992_film)). You can see the effect in [this](https://youtu.be/F5bAa6gFvLs?t=33) clip, around 33sec.
+A JavaScript library to recreate the decryption animation from the 1992 tech thriller [Sneakers](https://en.wikipedia.org/wiki/Sneakers_(1992_film)). You can see the effect in [this](https://youtu.be/F5bAa6gFvLs?t=33) clip, around 33sec.
 
 By default the library will follow the behaviour in that scene but you can tweak all of the parameters for the animation.
 
