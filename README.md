@@ -31,27 +31,17 @@ You can set the object so that only one of the two animations play out. To have 
 
 ## Parameters
 
-`id` - Name of the element's id that the animation will take place.
-
-`preformatted` - Set to `true` if you're using the animation on a `<pre>` or an element that has `white-space: pre-wrap` or `white-space: pre`.
-
-`rotating_time` - How long (in milliseconds) will the rotation stage last. Set this to `false` and rotation will never stop, and decryption will never start.
-
-`tab_size` - Tabs are converted to spaces since it's the only way to rotate them. This var controls how many spaces will a tab be converted to. This is only used when `preformatted` is used, otherwise it's ignored.
-
-`trigger_after` - If you set this to a number then the algorithm will wait this long (in milliseconds) and then activate a listener for mouse or keyboard activity. When the listener triggers (when the user uses the keyboard or mouse) decryption will start. This makes the effect more engaging.
-
-`r_slower` - During rotation, by default, all characters inside the target element rotate. If there are more than 1000 characters (and in older computers and phones it could be as low as 300) this can cause a load on the CPU. With this var you can alleviate that. It'll make some of the characters rotate, not all. It also has a different visual effect that you may prefer. It's a float in the range 0-1.
-
-`delay` - For how long to wait (in milliseconds) between a letter rotation and the next. Setting this too low will put a serious load on the CPU because by default during rotation all characters inside the element are rotated. The load can be alleviated with `r_slower`. Something that's above 49ms will look really bad. Optimal is 30-39ms.
-
-`rotate_spaces` - Whether spaces will get rotated along with the rest of the characters.
-
-`d_rate` - The smaller this number the faster decryption will take place. During decryption some characters get revealed while others continue to rotate. This controls how many characters gets revealed per second. It's not an absolute number though. It's an integer and you can set it from 0 to however large you want. Practically, something that's above 9999 won't make any difference.
-
-`d_slower` - Like `r_slower` but during decryption. Controls how fast will the characters rotate during decryption. Float in the range 0-1, with 0 being the fastest.
-
-`chars` - The range of characters that will be used for rotations. The library by default uses the 96 characters you can produce with the keyboard. The film uses the whole Code page 437. The variable is an array of characters. I found it more convenient to use a string and then .split(""). I recommend you do the same.
+- **`id`** - Name of the element's id that the animation will take place.
+- **`preformatted`** - Set to `true` if you're using the animation on a `<pre>` or an element that has `white-space: pre-wrap` or `white-space: pre`.
+- **`rotating_time`** - How long (in milliseconds) will the rotation stage last. Set this to `false` and rotation will never stop, and decryption will never start.
+- **`tab_size`** - Tabs are converted to spaces since it's the only way to rotate them. This var controls how many spaces will a tab be converted to. This is only used when `preformatted` is used, otherwise it's ignored.
+- **`trigger_after`** - If you set this to a number then the algorithm will wait this long (in milliseconds) and then activate a listener for mouse or keyboard activity. When the listener triggers (when the user uses the keyboard or mouse) decryption will start. This makes the effect more engaging.
+- **`r_slower`** - During rotation, by default, all characters inside the target element rotate. If there are more than 1000 characters (and in older computers and phones it could be as low as 300) this can cause a load on the CPU. With this var you can alleviate that. It'll make some of the characters rotate, not all. It also has a different visual effect that you may prefer. It's a float in the range 0-1.
+- **`delay`** - For how long to wait (in milliseconds) between a letter rotation and the next. Setting this too low will put a serious load on the CPU because by default during rotation all characters inside the element are rotated. The load can be alleviated with `r_slower`. Something that's above 49ms will look really bad. Optimal is 30-39ms.
+- **`rotate_spaces`** - Whether spaces will get rotated along with the rest of the characters.
+- **`d_rate`** - The smaller this number the faster decryption will take place. During decryption some characters get revealed while others continue to rotate. This controls how many characters gets revealed per second. It's not an absolute number though. It's an integer and you can set it from 0 to however large you want. Practically, something that's above 9999 won't make any difference.
+- **`d_slower`** - Like `r_slower` but during decryption. Controls how fast will the characters rotate during decryption. Float in the range 0-1, with 0 being the fastest.
+- **`chars`** - The range of characters that will be used for rotations. The library by default uses the 96 characters you can produce with the keyboard. The film uses the whole Code page 437. The variable is an array of characters. I found it more convenient to use a string and then .split(""). I recommend you do the same.
 
 ## Notes
 
