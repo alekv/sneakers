@@ -41,7 +41,7 @@ You can set the object so that only one of the two animations play out. To have 
 - **`rotate_spaces`** - Whether spaces will get rotated along with the rest of the characters.
 - **`d_rate`** - The smaller this number the faster decryption will take place. During decryption some characters get revealed while others continue to rotate. This controls how many characters gets revealed per second. It's not an absolute number though. It's an integer and you can set it from 0 to however large you want. Practically, something that's above 9999 won't make any difference.
 - **`d_slower`** - Like `r_slower` but during decryption. Controls how fast will the characters rotate during decryption. Float in the range 0-1, with 0 being the fastest.
-- **`chars`** - The range of characters that will be used for rotations. The library by default uses the 96 characters you can produce with the keyboard. The film uses the whole Code page 437. The variable is an array of characters. I found it more convenient to use a string and then .split(""). I recommend you do the same.
+- **`chars`** - The range of characters that will be used for rotations. The library by default uses the 96 characters you can produce with the keyboard. The film uses the whole Code page 437. The variable is an array of characters. I found it more convenient to use a string and then `.split("")`. I recommend you do the same.
 
 ## Notes
 
